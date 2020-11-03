@@ -1,0 +1,29 @@
+CREATE (vag:car_concern{name:"VAG", country:"Германия"})<-[:belongs{name:"принадлежит"}]-(lamborghini:car_brand{name:"Lamborghini"}),
+(vag)<-[:belongs{name:"принадлежит"}]-(porsche:car_brand{name:"Porsche"}),
+
+(toyota_concern:car_concern{name:"Toyota", country:"Япония"})<-[:belongs{name:"принадлежит"}]-(toyota:car_brand{name:"Toyota"}),
+(toyota_concern)<-[:belongs{name:"принадлежит"}]-(lexus:car_brand{name:"Lexus"}),
+
+(general_motors:car_concern{name:"General Motors", country:"США"})<-[:belongs{name:"принадлежит"}]-(cadillac:car_brand{name:"Cadillac"}),
+(general_motors)<-[:belongs{name:"принадлежит"}]-(chevrolet:car_brand{name:"Chevrolet"}),
+
+(ford_motor:car_concern{name:"Ford Motor", country:"США"})<-[:belongs{name:"принадлежит"}]-(ford:car_brand{name:"Ford"}),
+(ford_motor)<-[:belongs{name:"принадлежит"}]-(lincoln:car_brand{name:"Lincoln"}),
+
+(fca:car_concern{name:"FCA", country:"Италия/США"})<-[:belongs{name:"принадлежит"}]-(chrysler:car_brand{name:"Chrysler"}),
+(fca)<-[:belongs{name:"принадлежит"}]-(ferrari:car_brand{name:"Ferrari"}),
+
+(daimler:car_concern{name:"Daimler", country:"Германия"})<-[:belongs{name:"принадлежит"}]-(mercedes_benz:car_brand{name:"Mercedes-Benz"}),
+(daimler)<-[:belongs{name:"принадлежит"}]-(smart:car_brand{name:"Smart"}),
+
+(bmw_concern:car_concern{name:"BMW", country:"Германия"})<-[:belongs{name:"принадлежит"}]-(bmw:car_brand{name:"BMW"}),
+(bmw_concern)<-[:belongs{name:"принадлежит"}]-(rolls_royce:car_brand{name:"Rolls-Royce"}),
+
+(car_concern:class{name:"Автоконцерн"}),
+(car_concern)<-[:is{name:"это"}]-(vag),
+(car_concern)<-[:is{name:"это"}]-(toyota_concern),
+(car_concern)<-[:is{name:"это"}]-(general_motors),
+(car_concern)<-[:is{name:"это"}]-(ford_motor),
+(car_concern)<-[:is{name:"это"}]-(fca),
+(car_concern)<-[:is{name:"это"}]-(daimler),
+(car_concern)<-[:is{name:"это"}]-(bmw_concern)

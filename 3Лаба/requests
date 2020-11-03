@@ -1,0 +1,17 @@
+MATCH (n) RETURN n
+MATCH (n:car_concern{country:"США"}) RETURN n
+MATCH (n:car_brand{name:"Ford"}) RETURN n
+MATCH (n)-[:belongs]-(m) RETURN (n)-[:belongs]-(m)
+MATCH (n:car_concern) RETURN n 
+MATCH (n:car_brand) RETURN n 
+
+MATCH (n)-[:belongs]-(m:car_brand{name:"Rolls-Royce"}) RETURN n
+MATCH (n)-[:belongs]-(m:car_concern{name:"FCA"}) RETURN n
+MATCH (n)-[:belongs]-(m:car_concern{name:"VAG"}) RETURN (n)-[:belongs]-(m)
+MATCH (n:class) RETURN n
+MATCH (n:class)-[:is]-(m) RETURN (n)-[:is]-(m)
+MATCH (n)-[*]-(m) RETURN (n)-[*]-(m)
+
+MATCH (n)-[:belongs]-(m) WHERE n.country="Германия" RETURN (n)-[:belongs]-(m)
+MATCH (n)-[:belongs]-(m) WHERE n.country="Япония" OR n.country="Италия/США" RETURN (n)-[:belongs]-(m)
+
